@@ -18,6 +18,7 @@
   "homepage": "https://github.com/frugal-ui/FsExpressSaveDialog#readme",
   "dependencies": {
     "@frugal-ui/base": "^1.0.0-beta43",
+    "@frugal-ui/fsexpress-filepicker": "^1.0.1",
     "basic-fs-express-frontend": "^1.1.5"
   }
 }
