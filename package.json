@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frugal-ui/FsExpressSaveDialog.git"
+    "url": "git+https://github.com/BasicServer/SaveDialog.git"
   },
   "author": "viridian035",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/frugal-ui/FsExpressSaveDialog/issues"
+    "url": "https://github.com/BasicServer/SaveDialog/issues"
   },
-  "homepage": "https://github.com/frugal-ui/FsExpressSaveDialog#readme",
+  "homepage": "https://github.com/BasicServer/SaveDialog#readme",
   "dependencies": {
     "@frugal-ui/base": "^1.0.0-beta43",
     "@frugal-ui/fsexpress-filepicker": "^1.0.1",
