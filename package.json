@@ -1,0 +1,23 @@
+{
+  "name": "@frugal-ui/fsexpress-savedialog",
+  "version": "1.0.0",
+  "description": "Save dialog for BasicFsExpress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frugal-ui/FsExpressSaveDialog.git"
+  },
+  "author": "viridian035",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frugal-ui/FsExpressSaveDialog/issues"
+  },
+  "homepage": "https://github.com/frugal-ui/FsExpressSaveDialog#readme",
+  "dependencies": {
+    "@frugal-ui/base": "^1.0.0-beta43",
+    "basic-fs-express-frontend": "^1.1.5"
+  }
+}
