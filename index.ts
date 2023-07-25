@@ -1,11 +1,15 @@
 import {
 	Button,
 	ButtonStyles,
+	ComputedState,
 	HStack,
-	Input, Spacer, State, TextInputCfg,
-	VStack
+	Input,
+	Spacer,
+	State,
+	TextInputCfg,
+	VStack,
 } from '@frugal-ui/base';
-import FilePicker, {Types} from '@frugal-ui/fsexpress-filepicker';
+import FilePicker, { SelectedItem, Types } from '@basicserver/filepicker';
 
 type SaveFn = (filePath: string) => void;
 
@@ -16,7 +20,17 @@ export default function SaveDialog(
 	cancel: () => void,
 ) {
 	const fileName = new State('');
-	const openDirectory = new State(initialDirectory);
+	const directoryPath = new State('');
+	const selectedItem = new SelectedItem((item) => {
+		if (item.path == undefined) {
+			fileName.value = '';
+			directoryPath.value = '';
+		} else if (item.isDirectory == true) {
+			directoryPath.value = item.path ?? '';
+		} else {
+			fileName.value = item.name ?? '';
+		}
+	});
 
 	return VStack(
 		HStack(
@@ -27,7 +41,7 @@ export default function SaveDialog(
 				style: ButtonStyles.Primary,
 				accessibilityLabel: 'save here',
 				text: 'Save',
-				action: () => save(`${openDirectory.value}/${fileName.value}`),
+				action: () => save(`${directoryPath.value}/${fileName.value}`),
 			}),
 
 			Spacer(),
@@ -42,6 +56,6 @@ export default function SaveDialog(
 			.useDefaultSpacing()
 			.cssBorderBottom('1px solid var(--lines)'),
 
-		FilePicker(rootName, openDirectory, [Types.Directory]),
+		FilePicker(rootName, initialDirectory, selectedItem, [Types.File, Types.Directory]),
 	);
 }
